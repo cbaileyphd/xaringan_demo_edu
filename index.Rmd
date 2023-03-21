@@ -93,7 +93,7 @@ The figure below should have alternate text that reads "A scatter plot of the re
 
 ```{r cars, fig.height=4, dev='svg', fig.alt = 'A scatter plot of the relationship between distance and speed.', out.width = '400px'}
 par(mar = c(4, 4, 1, .1))
-plot(cars, pch = 19, col = 'darkgray', las = 1)
+plot(cars, pch = 19, col = 'darkgrey', las = 1)
 
 ```
 
