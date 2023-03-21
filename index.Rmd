@@ -1,0 +1,110 @@
+---
+title: "Sample Presentation"
+subtitle: "Accessibility Check"
+author: "Chris Bailey"
+institute: "UNT KHPR"
+date: 
+output:
+  xaringan::moon_reader:
+     css: xaringan-themer.css
+     
+---
+
+```{r setup, xaringan-themer, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(xaringanthemer)
+style_mono_accent(
+  base_color = "#1c5253",
+  header_font_google = google_font("Josefin Sans"),
+  text_font_google   = google_font("Montserrat", "300", "300i"),
+  code_font_google   = google_font("Fira Mono")
+)
+
+```
+
+
+# Slide Title (Level 1 Header)
+## 2nd level header
+Here is some general text. 
+### List title (3rd level header)
+- list item 1
+- list item 2
+- list item 3
+
+#### Ordered list title (4th level header)
+1. item 1
+2. item 2
+3. item 3
+
+
+---
+
+# Hello World
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In quis tristique leo. Duis convallis vel purus id malesuada. Nam nec bibendum augue, a pulvinar lorem. Phasellus rutrum risus ut dolor porta, cursus mollis quam dignissim. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas sit amet nisi vehicula mi iaculis vehicula. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+
+--
+
+Here's an embedded link to [Major League Baseball Statcast data](https://baseballsavant.mlb.com/leaderboard/custom?year=2022&type=batter&filter=&sort=4&sortDir=desc&min=q&selections=xba,xslg,xwoba,xobp,xiso,exit_velocity_avg,launch_angle_avg,barrel_batted_rate,&chart=false&x=xba&y=xba&r=no&chartType=beeswarm).
+
+--
+
+- Click the "Download CSV" button to get access to it in a format that is readable in Microsoft Excel
+
+--
+
+- or download it in the appropriate Canvas module.
+
+.footnote[
+[1] Here is a footnote example that directs users to  [PubMed](https://pubmed.ncbi.nlm.nih.gov/).
+]
+
+---
+# Slide with embedded audio
+
+A script of what is said would also be provided, but I would like to know if the audio player controls are accessible.
+
+<audio width="500" height="400"  controls>
+  <source src="demoAudio.mp4" type="audio/mp4">
+</audio> 
+
+
+---
+
+# Math Expressions
+
+From Newton's 2nd Law, we know that: 
+
+
+
+$${Force}=mass * acceleration$$
+
+and from that we can derive the impulse-momentum equation that tells us that a change in impulse causes a change in linear momentum. The Delta symbol used in this equation represents change in some variable and this caused issues in PowerPoint previously with screen readers. 
+
+$$\Delta\ Force* time = mass* \Delta\ velocity$$
+---
+
+# Programming code and figures with alt text
+
+I may include some code in slides depending on the class and I am interested to see if a screen reader picks up on the difference between it and regular text. 
+
+The figure below should have alternate text that reads "A scatter plot of the relationship between distance and speed."
+
+```{r cars, fig.height=4, dev='svg', fig.alt = 'A scatter plot of the relationship between distance and speed.', out.width = '400px'}
+par(mar = c(4, 4, 1, .1))
+plot(cars, pch = 19, col = 'darkgray', las = 1)
+
+```
+
+---
+
+# Tables
+
+Here is an example of a table with 5 columns or variables that includes a header row for each variable. I am unable to assign alternate text for the entire table so it is included in the table title.
+
+```{r echo=FALSE}
+table <- head(iris)
+knitr::kable(table, col.names = gsub("[.]", " ", names(iris)), format = 'html', caption = "A table of sepal length, sepal width, petal length, petal width, and species.")
+```
+
